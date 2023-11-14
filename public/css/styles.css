@@ -1,0 +1,124 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+main {
+    width: 90%;
+    align-items: center;
+}
+
+/* Estilos del cuerpo de la página */
+header {
+    background-color: #EAC926;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilos del cuerpo de la página */
+body {
+    padding: 10px;
+    background-color: #ebebeb;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilos de las imágenes */
+img {
+    width: 100%;
+}
+
+/* Estilos del logo */
+.logo {
+    width: 40%;
+}
+
+/* Clase menú */
+.burger-menu {
+    text-align: center;
+}
+
+/* Modificar sólo el icono */
+.burger-menu i {
+    color: #fff; /* Cambiado a blanco */
+    background-color: #1259c3; /* Cambiado a azul o celeste */
+    padding: 5px; /* Agregado un padding de 3px */
+    border-radius: 5px; /* Añadidas esquinas redondeadas */
+}
+
+#titular1, #titular2 {
+    font-size: 24px;
+}
+
+#precios {
+    font-size: 18px;
+}
+
+#descuentos {
+    font-size: 16px;
+}
+
+#descripciones {
+    font-size: 16px;
+}
+
+#cuotas {
+    text-align: center;
+}
+
+article {
+    background-color: white;
+    margin: 10px 0;
+    border-top: 1px solid #ebebeb;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.producto-imagen img {
+    border: 1px solid #ccc;
+    max-width: 100%;
+}
+
+comp {
+    color: #39b54a;
+}
+
+.producto-titulo {
+    margin-top: 15px;
+}
+
+.producto-info {
+    margin-left: 15px;
+}
+
+.producto-precio {
+    font-size: 18px;
+}
+
+.producto-descuento {
+    color: #39b54a;
+    font-size: 16px;
+}
+
+.contenedor-central {
+    width: 90%;
+    margin: 0 auto;
+}
+
+footer {
+    margin: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+j {
+    color: #1259c3;
+}
+
+@media (min-width: 361px){
+
+}
+
+@media (min-width: 769px){
+
+}

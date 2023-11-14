@@ -1,0 +1,18 @@
+{
+  "name": "trabajoml",
+  "version": "1.0.0",
+  "description": "Este es el segundo trabajo individual, hicimos un Mercado Libre",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "Rodrigo Alejandro Beltran",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
