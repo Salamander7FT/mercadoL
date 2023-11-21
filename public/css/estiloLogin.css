@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 main {
@@ -15,13 +16,6 @@ header {
     display: flex;
     flex-wrap: wrap;
     background-color: #EAC926;
-    font-family: 'Roboto', sans-serif;
-}
-
-/* Estilos del cuerpo de la página */
-body {
-    padding: 10px;
-    background-color: #ebebeb;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -68,80 +62,49 @@ form {
     /* Añadidas esquinas redondeadas */
 }
 
-#titular1,
-#titular2 {
-    width: 100%;
-    font-size: 24px;
-    color: #666;
-    padding-top: 4%;
-    padding-bottom: 4%;
+body {
+    text-align: center;
+    background-color: #ebebeb;
+    margin: 20px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
 }
 
-#precios {
-    font-size: 18px;
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-#descuentos {
-    color: #39b54a;
-    font-size: 16px;
-}
-
-#descripciones {
-    font-size: 16px;
-    color: #666;
-}
-
-#cuotas {
-    width: 100%;
+form {
     text-align: center;
 }
 
-article {
-    background-color: white;
-    margin: 10px 0;
-    border-top: 1px solid #ebebeb;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.producto-imagen img {
-    border: 1px solid #ccc;
-    max-width: 100%;
-}
-
-comp.fa-solid.fa-truck {
-    color: #39b54a;
+label {
     display: block;
-    font-size: 16px;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #39b54a;
-    background-color: #FFF;
-    border-radius: 50%;
-    position: relative;
-    left: 95%;
-    top: -15px;
+    margin-top: 5px;
+    margin-bottom: 8px;
 }
 
-.producto-titulo {
-    margin-top: 15px;
-    font-size: 16px;
-    color: #666;
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
 }
 
-.producto-info {
-    margin-left: 15px;
+button {
+    background-color: #1259c3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.producto-precio {
-    font-size: 18px;
-}
-
-.producto-descuento {
-    color: #39b54a;
-    font-size: 16px;
+button:hover {
+    background-color: #0022AA;
 }
 
 .contenedor-central {

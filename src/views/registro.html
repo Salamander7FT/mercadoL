@@ -1,71 +1,138 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Registro</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/css/estiloRegistro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <form action="#" method="post">
-        <div class="form-group">
-            <label class="campo" for="nombre">Nombre:</label>
-            <input class="campo-input" type="text" id="nombre" name="nombre" required>
-        </div>
-        <div class="form-group">
-            <label class="campo" for="apellido">Apellido:</label>
-            <input class="campo-input" type="text" id="apellido" name="apellido" required>
-        </div>
-        <div class="form-group">
-            <label class="campo" for="dni">DNI:</label>
-            <input class="campo-input" type="tel" id="dni" name="dni" pattern="[0-9]{8}" required>
-        </div>
-        <div class="form-group">
-            <label class="campo" for="email">Correo electrónico:</label>
-            <input class="campo-input" type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label class="campo" for="password">Contraseña:</label>
-            <div class="input-container">
-                <input class="campo-input password" type="password" id="password" name="password" required>
-                <button class="eye-button" type="button" id="togglePassword">Mostrar/Ocultar</button>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="campo" for="repeatPassword">Repetir contraseña:</label>
-            <input class="campo-input password" type="password" id="repeatPassword" name="repeatPassword" required>
-        </div>
-        <div class="form-group">
-            <label class="campo smaller" for="subscribe">¿Desea suscribirse para recibir las últimas novedades y ofertas
-                de
-                nuestros productos a su correo?</label>
-            <input type="checkbox" id="subscribe" name="subscribe" style="vertical-align: middle;">
-        </div>
-        <button type="submit">Registrarse</button>
-    </form>
+    <header>
+        <figure class="logo">
+            <img src="/img/logo-mercado-liebre.svg">
+        </figure>
+        <h3 class="searchbar"></h3>
 
-    <script src="/app.js"></script>
-    <script>
-        document.getElementById('togglePassword').addEventListener('click', function () {
-            const passwordInputs = document.querySelectorAll('.password');
-            passwordInputs.forEach(function (input) {
-                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
-                input.setAttribute('type', type);
-            });
-        });
+        <form action="../../form-result.php" method="post" target="_blank" class="search-form">
+            <input type="search" name="busquedaproducto" placeholder="Buscar productos, marcas..." class="search-input">
+            <button type="submit" class="search-button">
+                <i class="fa fa-search search-icon"></i>
+            </button>
+        </form>
 
-        document.querySelector('form').addEventListener('submit', function (e) {
-            const password = document.getElementById('password').value;
-            const repeatPassword = document.getElementById('repeatPassword').value;
+        <h3 id="cuotas"><i class="fa-solid fa-hand-holding-dollar"></i>Comprá en cuotas y sin tarjeta de crédito</h3>
 
-            if (password !== repeatPassword) {
-                e.preventDefault();
-            }
-        });
-    </script>
+        <nav>
+            <ul>
+                <li> <a href="">Ofertas</a></li>
+                <li><a href="">Tiendas Oficiales</a></li>
+                <li><a href="">Vender</a></li>
+                <li><a href="">Ayuda</a></li>
+            </ul>
+
+            <ul class="fondo">
+                <li> <a href="registro">Crea tu cuenta </a><i class="fa-regular fa-id-card"></i></li>
+                <li> <a href="login">Ingresá </a><i class="fa-solid fa-right-to-bracket"></i></li>
+                <li> <a href="">Mis compras </a> <i class="fa-solid fa-basket-shopping"></i></li>
+            </ul>
+        </nav>
+
+        <div class="burger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <figure class="banner">
+            <img src="/img/img-home-banner.jpg">
+        </figure>
+
+    </header>
+
+
+
+    <h2>Registro de Usuario</h2>
+    
+    <formR class="registro-container" action="home.html" method="post">
+        <label for="nombreApellido">Nombre y Apellido:</label>
+        <input type="text" id="nombreApellido" name="nombreApellido" required minlength="3">
+
+        <label for="nombreUsuario">Nombre de usuari@:</label>
+        <input type="text" id="nombreUsuario" name="nombreUsuario" required minlength="8">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+
+        <label for="domicilio">Domicilio:</label>
+        <input type="text" id="domicilio" name="domicilio" required>
+        <br>
+
+        <div class="perfUsuar">
+            <label>Perfil del Usuario:</label>
+            <input type="radio" id="comprar" name="perfil" value="comprar" required> Comprador
+            <input type="radio" id="vender" name="perfil" value="vender" required> Vendedor
+        </div>
+        <br>
+        
+        <div class="catInteres">
+            <label>Categorías de Interés:</label>
+            <input type="checkbox" id="electro" name="categorias[]" value="Electro"> Electro
+            <input type="checkbox" id="moda" name="categorias[]" value="Moda"> Moda
+            <input type="checkbox" id="hogar" name="categorias[]" value="Hogar"> Hogar
+            <input type="checkbox" id="jugueteria" name="categorias[]" value="Juguetería"> Juguetería
+            <input type="checkbox" id="vidaSana" name="categorias[]" value="Vida Sana"> Vida Sana
+        </div>
+
+        <label for="fotoUsuario">Foto de Usuario:</label>
+        <input type="file" id="fotoUsuario" name="fotoUsuario" accept="image/*">
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+
+        <label for="confirmarContrasena">Confirmar Contraseña:</label>
+        <input type="password" id="confirmarContrasena" name="confirmarContrasena" required>
+
+        <br>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar Datos</button>
+    </formR>
+
+
+    <footer>
+        <j>
+            <i class="fa-solid fa-credit-card" style="font-size: 2em; margin-bottom: 10px;"></i>
+        </j>
+        <br>
+        <b>Pagá con tarjeta o en efectivo</b>
+        <p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en
+            puntos de pago. ¡Y siempre es seguro!</p>
+
+        <j>
+            <i class="fa-solid fa-gift" style="font-size: 2em; margin-bottom: 10px;"></i>
+        </j>
+        <br>
+        <b>Envío gratis desde $ 2.500</b>
+        <p>Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles de
+            productos. Es un beneficio de Mercado Puntos.</p>
+
+        <j>
+            <i class="fa-solid fa-user-shield" style="font-size: 2em; margin-bottom: 10px;"></i>
+        </j>
+        <br>
+        <b>Seguridad, de principio a fin</b>
+        <p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer,
+            porque estás siempre protegid@.</p>
+
+        <p>Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+    </footer>
+
+
 </body>
 
 </html>

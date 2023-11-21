@@ -10,6 +10,14 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/views/home.html"));
 });
 
+app.get("/registro", function (req, res) {
+    res.sendFile(path.join(__dirname, "/views/registro.html"));
+});
+
+app.get("/login", function (req, res) {
+    res.sendFile(path.join(__dirname, "/views/login.html"));
+});
+
 // Levantar el servidor
 app.listen(5000, function () {
     console.log("Servidor corriendo en el puerto 5000");
