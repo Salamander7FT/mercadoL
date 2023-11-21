@@ -229,4 +229,24 @@ j {
         margin: 10px;
         max-width: calc(25% - 40px)
     }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    footer f {
+        width: 30%;
+        text-align: center;
+    }
+
+    footer j:hover i {
+        color: #39b54a;
+    }
+
+    footer j {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
 }

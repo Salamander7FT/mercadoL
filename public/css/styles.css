@@ -68,6 +68,25 @@ form {
     /* Añadidas esquinas redondeadas */
 }
 
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #1259c3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0022AA;
+}
+
 #titular1,
 #titular2 {
     width: 100%;
@@ -89,6 +108,12 @@ form {
 #descripciones {
     font-size: 16px;
     color: #666;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+article:hover #descripciones {
+    opacity: 1;
 }
 
 #cuotas {
@@ -110,7 +135,7 @@ article {
     max-width: 100%;
 }
 
-comp.fa-solid.fa-truck {
+.fa-solid.fa-truck {
     color: #39b54a;
     display: block;
     font-size: 16px;
@@ -123,12 +148,23 @@ comp.fa-solid.fa-truck {
     position: relative;
     left: 95%;
     top: -15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-solid.fa-truck:hover {
+    transform: rotate(-90deg);
 }
 
 .producto-titulo {
     margin-top: 15px;
     font-size: 16px;
     color: #666;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+article:hover .producto-titulo {
+    opacity: 1;
 }
 
 .producto-info {
@@ -184,10 +220,14 @@ j {
 /* Tablets o dispositivos más grandes como Apple */
 @media (min-width: 769px) {
     article {
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
         flex-grow: 0.5;
         margin: 10px;
-        max-width: calc(50% - 20px)
+        max-width: calc(50% - 20px);
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    article:hover {
+        box-shadow: 0px 0px 10px rgba(100, 100, 100);
     }
 
     .burger-menu {
@@ -261,9 +301,33 @@ j {
 /* PC */
 @media (min-width: 992px) {
     article {
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
         flex-grow: 0.25;
         margin: 10px;
-        max-width: calc(25% - 40px)
+        max-width: calc(25% - 40px);
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    article:hover {
+        box-shadow: 0px 0px 10px rgba(100, 100, 100);
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    footer f {
+        width: 30%;
+        text-align: center;
+    }
+
+    footer j:hover i {
+        color: #39b54a;
+    }
+
+    footer j {
+        display: inline-block;
+        margin-bottom: 10px;
     }
 }
